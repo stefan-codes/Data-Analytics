@@ -1,0 +1,20 @@
+Relation One:
+  Location vs ScoreOverall - location D on SO
+
+Relation Two:
+  ss vs st (correlation) where location is A or C
+
+Relation Three:
+  sj vs so liner correlation where Location is A or C with males
+
+Relation Four:
+  sj on F changes with age
+
+Relation Five:
+  sj on M from location B is much more clustered compared to the rest of loc.
+
+Relation Six:
+  sd for age O is much better than the rest
+
+Relation Seven:
+  ss for F from E at T

@@ -1,0 +1,7 @@
+plot with condition
+
+ggplot(data = dataset, mapping = aes(x = Location, y = sj, shape = Gender, color = Gender))
+ + geom_point(data = subset(dataset, Gender == "M")) + geom_smooth(method = 'lm')
+
+
+ggplot(data = dataset, mapping = aes(x = reorder(Age, sj), y = sj, shape = Gender, color = Gender)) + geom_boxplot()

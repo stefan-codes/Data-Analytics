@@ -1,0 +1,40 @@
+
+Relation one :
+ggplot(data = dataset, mapping = aes(x = Location, y = so, fill = Gender, outlier.fill = Gender, outlier.shape = 1)) + geom_boxplot()
+
+
+
+
+
+
+
+
+Simple ggplot :
+  ggplot(data = dataset, mapping = aes(x = X, y = so, shape = Gender, fill = Age)) + geom_boxplot(stat = "identity")
+
+Limit the displayed data:
+  prev + geom_boxplot(data = subset(dataset, Gender == "M" & Location == "A"))
+
+Add line of best fit:
+  geom_smooth(method = 'lm')
+
+Re-arrange x axis according to value:
+  ...aes(x = reorder(Age, sj), y = sj)...
+
+Re-arrange x axis in specific way:
+  prev + scale_x_discrete(limits=c("T","U","L","O"))
+
+Add title and labels:
+  prev + labs(title = "Average overall score for different locations ", x = "Location", y = "Overall Score")
+
+Adjust the text:
+  theme(plot.title = element_text(hjust = 0.5))
+
+
+
++ guides(colour = guide_legend(override.aes = list(alpha = 1)))
+
+
+format(summary(lm(y ~ x, dataset))$r.squared, digits = 3))
+
+geom_text(x = 25, y = 300, label = lm_eqn(df), parse = TRUE)

@@ -35,6 +35,6 @@ Adjust the text:
 + guides(colour = guide_legend(override.aes = list(alpha = 1)))
 
 
-format(summary(lm(y ~ x, dataset))$r.squared, digits = 3))
+r2 <- format(summary(lm(y-axis ~ x-axis, dataset))$r.squared, digits = 3)
 
 geom_text(x = 25, y = 300, label = lm_eqn(df), parse = TRUE)

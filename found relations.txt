@@ -53,7 +53,7 @@ Relation Four:
 Relation Five:
   sj vs so liner correlation where Location is A or C with M
 
-  ggplot(data = subset(dataset, (Location == "A" | Location == "C") & Gender = "M", mapping = aes(x = sj, y = so, color = Location))
+  ggplot(data = subset(dataset, (Location == "A" | Location == "C") & Gender == "M"), mapping = aes(x = sj, y = so, color = Location))
   + geom_point(alpha = 10/10, position = position_dodge(width = 1))
   + labs(title = "Jump Score against Overall Score for Locations A and C with Males", x = "Jump Score", y = "Overall Score")
   + theme(plot.title = element_text(hjust = 0.5))
@@ -61,4 +61,14 @@ Relation Five:
 Relation Six:
   sj vs sd for M from B
 
-  
+  ggplot(data = subset(dataset, Location == "B" & Gender == "M"), mapping = aes(x = sd, y = sj, color = Age)) + geom_point()
+  + facet_wrap(~ Age, ncol = 2)
+  + labs(title = "Distance Score against Jump Score for location B with Males", x = "Distance Score", y = "Jump Score")
+  + theme(plot.title = element_text(hjust = 0.5))
+
+Relation Seven:
+  E vs F vs T vs SS vs SJ
+
+  ggplot(data = subset(dataset, Location == "E" & Gender == "F" & Age == "T"), mapping = aes(x = ss, y = sj, color = Gender)) + geom_point()
+  + labs(title = "Sprint Score against Jump Score for location E with Females of age T", x = "Sprint Score", y = "Jump Score")
+  + theme(plot.title = element_text(hjust = 0.5))
